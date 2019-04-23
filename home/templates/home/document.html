@@ -139,23 +139,14 @@ Document | Impact By Distinctive Themes
                                     <h3 class="block-title">Step Three</h3>
                                     <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis.
                                     </p>
-                                    <!--
-                                    <iframe src="http://192.168.103.104:23000/d-solo/D1JI6ygWz/kmong-data?orgId=1&from=1555916253542&to=1555917153542&panelId=6" width="450" height="200" frameborder="0"></iframe>
-                                    -->
+                                                                      
+                                
                                 </div><!--//section-block-->
                             </section><!--//doc-section-->
+                        
+                            <div id='graph-section' >
+                            </div><!--//graph-section-->
                         </div>
-                        <!--
-                        <div class="service-block">
-                            <div class="pull-left bounce-in">
-                                <i class="fa fa-android fa fa-md"></i>
-                            </div>
-                            <div class="media-body fade-up">
-                                <h3 class="media-heading">Facebook Marketing</h3>
-                                <p>The who arrival end how fertile enabled. Brother she add yet see minuter natural smiling article painted. Themselves at dispatched interested insensible am be prosperous reasonably it. </p>
-                            </div>
-                        </div>
-                        -->
                     </div><!--/.col-md-9-->
                     
                 </div><!--/.row-->
@@ -181,4 +172,26 @@ Document | Impact By Distinctive Themes
 <script type="text/javascript" src="{% static 'prettydocs/plugins/jquery-scrollTo/jquery.scrollTo.min.js' %}"></script>   
 <script type="text/javascript" src="{% static 'prettydocs/plugins/stickyfill/dist/stickyfill.min.js' %}"></script>                                                             
 <script type="text/javascript" src="{% static 'prettydocs/js/main.js' %}"></script>
+
+<!--그라파나 실시간 그래프-->
+<script type="text/javascript">
+
+var starttime = 1555990681;
+var endtime = 1555991581;
+var grafanaSrc = "http://192.168.103.104:23000/d-solo/D1JI6ygWz/kmong-data?orgId=1&from=" + starttime + "407&to=" + endtime + "407&refresh=10&theme=light&panelId=6"
+
+document.getElementById("graph-section").innerHTML = '<iframe id = "graphframe" src="'+grafanaSrc +'" width="600" height="300" frameborder="0"></iframe>';
+var f = document.getElementById('graphframe');
+
+function EmbedGraph(){
+    starttime = starttime + 10;
+    endtime = endtime + 10;
+    grafanaSrc = "http://192.168.103.104:23000/d-solo/D1JI6ygWz/kmong-data?orgId=1&from=" + starttime + "407&to=" + endtime + "407&refresh=10s&theme=light&panelId=6"
+    f.src = grafanaSrc;
+    console.log(starttime, endtime);
+}
+
+setInterval(function(){EmbedGraph();}, 10000);
+</script>
+
 {% endblock script %}
