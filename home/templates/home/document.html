@@ -1,0 +1,184 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block title %}
+Document | Impact By Distinctive Themes
+{% endblock title %}
+
+{% block css %}
+
+<!--
+<link href='https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800' rel='stylesheet' type='text/css'>
+<script defer src="https://use.fontawesome.com/releases/v5.7.2/js/all.js" integrity="sha384-0pzryjIRos8mFBWMzSSZApWtPl/5++eIfzYmTgBBmXYdhvxPc+XcFEk+zJwDgWbP" crossorigin="anonymous"></script>
+-->
+<!-- Plugins CSS -->    
+<link rel="stylesheet" href="{% static 'prettydocs/plugins/prism/prism.css' %}">
+<link rel="stylesheet" href="{% static 'prettydocs/plugins/elegant_font/css/style.css' %}">  
+
+<!-- Theme CSS -->
+<link id="theme-style" rel="stylesheet" href="{% static 'prettydocs/css/styles.css' %}">
+
+{% endblock css %}
+
+{% block section %}
+    <section id="single-page-slider" class="no-margin">
+        <div class="carousel slide" data-ride="carousel">
+            <div class="carousel-inner">
+                <div class="item active">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-md-12">
+                                <div class="center gap fade-down section-heading">
+                                    <h2 class="main-title">Document</h2>
+                                    <hr>
+                                    <p>Of an or game gate west face shed. ﻿no great but music too old found arose.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div><!--/.item-->
+            </div><!--/.carousel-inner-->
+        </div><!--/.carousel-->
+    </section><!--/#main-slider-->
+
+    <div id="content-wrapper">
+        <section id="services" class="white">
+            <div class="container">
+            <div class="gap"></div>
+                <div class="row doc-body">
+                    <div class="doc-sidebar col-md-3 d-none d-md-flex">
+                        <div id="doc-nav" class="doc-nav">
+                            <nav id="doc-menu" class="nav doc-menu flex-column sticky">
+                                <a class="nav-link scrollto" href="#download-section">Download</a>
+                                <a class="nav-link scrollto" href="#installation-section">Installation</a>
+                                <nav class="doc-sub-menu nav flex-column">
+                                    <a class="nav-link scrollto" href="#step1">Step One</a>
+                                    <a class="nav-link scrollto" href="#step2">Step Two</a>
+                                    <a class="nav-link scrollto" href="#step3">Step Three</a>
+                                </nav><!--//nav-->
+                                
+                            </nav><!--//doc-menu-->
+                        </div>
+                        <!--
+                        <div class="service-block">
+                            <div class="pull-left bounce-in">
+                                <i class="fa fa-windows fa fa-md"></i>
+                            </div>
+                            <div class="media-body fade-up">
+                                <h3 class="media-heading">Windows Apps</h3>
+                                <p>Unfeeling so rapturous discovery he exquisite. Reasonably so middletons or impression by terminated. Old pleasure required removing elegance him had. Down she bore sing saw calm high.</p>
+                            </div>
+                        </div>
+                        -->
+
+                    </div><!--/.col-md-3(side-bar)-->
+
+                    <div class="doc-content col-md-9">
+                        <div class="content-inner">
+                            <section id="download-section" class="doc-section">
+                                <h2 class="section-title">Download</h2>
+                                <div class="section-block">
+                                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi nec imperdiet turpis. Curabitur aliquet pulvinar ultrices. Etiam at posuere leo. Proin ultrices ex et dapibus feugiat <a href="#">link example</a> aenean purus leo, faucibus at elit vel, aliquet scelerisque dui. Etiam quis elit euismod, imperdiet augue sit amet, imperdiet odio. Aenean sem erat, hendrerit  eu gravida id, dignissim ut ante. Nam consequat porttitor libero euismod congue. 
+                                    </p>
+                                    <a href="https://themes.3rdwavemedia.com/bootstrap-templates/startup/prettydocs-free-bootstrap-theme-for-developers-and-startups/" class="btn btn-green" target="_blank"><i class="fas fa-download"></i> Download PrettyDocs</a>
+                                </div>
+                            </section><!--//doc-section-->
+
+                            <section id="installation-section" class="doc-section">
+                                <h2 class="section-title">Installation</h2>
+                                <div id="step1"  class="section-block">
+                                    <h3 class="block-title">Step One</h3>
+                                    <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis.
+                                    </p>
+                                    <div class="code-block">
+                                        <h6>Default code example:</h6>
+                                        <p><code>bower install &lt;package&gt;</code></p>
+                                        <p><code>npm install &lt;package&gt;</code></p>
+                                    </div><!--//code-block-->
+                                </div><!--//section-block-->
+                                <div id="step2"  class="section-block">
+                                    <h3 class="block-title">Step Two</h3>
+                                    <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa.
+                                    </p>
+                                    <div class="row">
+                                        <div class="col-md-6 col-12">
+                                            <h6>Un-ordered list example</h6>
+                                            <ul class="list">
+        										<li>Lorem ipsum dolor sit amet.</li>
+        										<li>Aliquam tincidunt mauris.</li>
+        										<li>Ultricies eget vel aliquam libero.
+        											<ul>
+        												<li>Turpis pulvinar</li>
+        												<li>Feugiat scelerisque</li>
+        												<li>Ut tincidunt</li>
+        											</ul>
+        										</li>
+        										<li>Pellentesque habitant morbi.</li>
+        										<li>Praesent dapibus, neque id.</li>
+        									</ul>
+                                        </div>
+                                        <div class="col-md-6 col-12">
+                                            <h6>Ordered list example</h6>
+                                            <ol class="list">
+        										<li>Lorem ipsum dolor sit amet.</li>
+        										<li>Aliquam tincidunt mauris.</li>
+        										<li>Ultricies eget vel aliquam libero.
+        											<ul>
+        												<li>Turpis pulvinar</li>
+        												<li>Feugiat scelerisque</li>
+        												<li>Ut tincidunt</li>
+        											</ul>
+        										</li>
+        										<li>Pellentesque habitant morbi.</li>
+        										<li>Praesent dapibus, neque id.</li>
+        									</ol>
+                                        </div>
+                                    </div><!--//row-->
+                                </div><!--//section-block-->
+                                <div id="step3"  class="section-block">
+                                    <h3 class="block-title">Step Three</h3>
+                                    <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis.
+                                    </p>
+                                    <!--
+                                    <iframe src="http://192.168.103.104:23000/d-solo/D1JI6ygWz/kmong-data?orgId=1&from=1555916253542&to=1555917153542&panelId=6" width="450" height="200" frameborder="0"></iframe>
+                                    -->
+                                </div><!--//section-block-->
+                            </section><!--//doc-section-->
+                        </div>
+                        <!--
+                        <div class="service-block">
+                            <div class="pull-left bounce-in">
+                                <i class="fa fa-android fa fa-md"></i>
+                            </div>
+                            <div class="media-body fade-up">
+                                <h3 class="media-heading">Facebook Marketing</h3>
+                                <p>The who arrival end how fertile enabled. Brother she add yet see minuter natural smiling article painted. Themselves at dispatched interested insensible am be prosperous reasonably it. </p>
+                            </div>
+                        </div>
+                        -->
+                    </div><!--/.col-md-9-->
+                    
+                </div><!--/.row-->
+            </div>
+            <div class="gap"></div>
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="center gap fade-down section-heading">
+                        <h2 class="main-title">Our Skills</h2>
+                        <hr>
+                        <p>Of an or game gate west face shed. ﻿no great but music too old found arose.</p>
+                    </div>
+                </div>
+            </div><!--/.row-->
+            
+        </section>
+    </div>
+{% endblock section %}
+
+{% block script %}
+<!-- Prettydocs Main Javascript -->
+<script type="text/javascript" src="{% static 'prettydocs/plugins/prism/prism.js' %}"></script>
+<script type="text/javascript" src="{% static 'prettydocs/plugins/jquery-scrollTo/jquery.scrollTo.min.js' %}"></script>   
+<script type="text/javascript" src="{% static 'prettydocs/plugins/stickyfill/dist/stickyfill.min.js' %}"></script>                                                             
+<script type="text/javascript" src="{% static 'prettydocs/js/main.js' %}"></script>
+{% endblock script %}
