@@ -78,14 +78,12 @@ function create_chart() {
     console.log('create post is working!')
 
     $.ajax({
-        url : "/create_chart", // the endpoint
+        url : "/create_chart/", // the endpoint
         type : "POST", // http method
         data : {
             embed_url : $('#embed_url').val(),
-            start_date : $('#start_time_0').val(),
-            start_time : $('#start_time_1').val(),
-            end_date : $('#end_time_0').val(),
-            end_time : $('#end_time_1').val(),
+            start_time : $('#start_time').val(),
+            end_time : $('#end_time').val(),
         }, // data sent with the post request
 
         // handle a successful response

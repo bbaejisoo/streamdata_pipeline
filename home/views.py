@@ -21,11 +21,13 @@ def create_chart(request):
 
     if request.method == 'POST':
         embed_url = request.POST.get('embed_url')
-        # timedate 형식 : "2019-04-25 10:33:31"
-        start_time = request.POST.get('start_date') + " " + request.POST.get('start_time')
-        end_time = request.POST.get('end_date') + " " + request.POST.get('end_time')
+
+        # timedate 형식 : "2019-04-25 10:33"
+        start_time = request.POST.get('start_time')
+        end_time = request.POST.get('end_time')
         response_data = {}
 
+        # Grafana 모델 객체를 만들어서 DB에 내용을 저장한다.
         post = Grafana(embed_url=embed_url, start_time=start_time, end_time=end_time)
         post.save()
 
@@ -46,8 +48,8 @@ def create_chart(request):
         # [날짜&시간 형식 변경]
         # timedate 형식 : "2019-04-25 10:33:31"
         # String to Datetime
-        start_convert = datetime.datetime.strptime(start_time, "%Y-%m-%d %H:%M:%S")
-        end_convert = datetime.datetime.strptime(end_time, "%Y-%m-%d %H:%M:%S")
+        start_convert = datetime.datetime.strptime(start_time, "%Y-%m-%d %H:%M")
+        end_convert = datetime.datetime.strptime(end_time, "%Y-%m-%d %H:%M")
 
         # unixtime 형식 : 1556012998
         # Datetime to Unixtime

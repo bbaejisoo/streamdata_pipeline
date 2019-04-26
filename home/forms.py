@@ -1,6 +1,7 @@
 from django import forms
 from .models import Grafana
-from django.contrib.admin.widgets import AdminSplitDateTime
+#from django.contrib.admin.widgets import AdminSplitDateTime
+from bootstrap_datepicker_plus import DateTimePickerInput
 
 
 class PostForm(forms.ModelForm):
@@ -15,15 +16,18 @@ class PostForm(forms.ModelForm):
         widgets = {
             'embed_url': forms.TextInput(attrs={
                 'id': "embed_url",
+                'class': "form-control",
                 'required': True,
                 'placeholder': 'http://<grafana server>:3000/...'
             }),
-            'start_time': AdminSplitDateTime(attrs={
+            'start_time': DateTimePickerInput(attrs={
                 'id': 'start_time',
+                'class': "form-control",
                 'required': True
-            }),
-            'end_time': AdminSplitDateTime(attrs={
+            }, format="%Y-%m-%d %H:%M"),
+            'end_time': DateTimePickerInput(attrs={
                 'id': 'end_time',
+                'class': "form-control",
                 'required': True
-            }),
+            }, format="%Y-%m-%d %H:%M"),
         }

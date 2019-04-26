@@ -8,37 +8,6 @@ Document | Impact By Distinctive Themes
 {% block css %}
 
 <!-- Django Admin CSS & JS -->
-<!--
-<link rel="stylesheet" type="text/css" href="/static/admin/css/forms.css">
-
-<script type="text/javascript" src="/admin/jsi18n/"></script>
-<script type="text/javascript" src="/static/admin/js/vendor/jquery/jquery.js"></script>
-<script type="text/javascript" src="/static/admin/js/jquery.init.js"></script>
-<script type="text/javascript" src="/static/admin/js/calendar.js"></script>
-<script type="text/javascript" src="/static/admin/js/admin/DateTimeShortcuts.js"></script>
-<script type="text/javascript" src="/static/admin/js/core.js"></script>
-<script type="text/javascript" src="/static/admin/js/urlify.js"></script>
-<link rel="stylesheet" type="text/css" href="/static/admin/css/responsive.css">
--->
-
-<link rel="stylesheet" type="text/css" href="/static/admin/css/forms.css">
-
-<script type="text/javascript" src="{% url 'javascript-catalog' %}"></script>
-
-<script type="text/javascript" src="/static/admin/js/vendor/jquery/jquery.js"></script>
-<script type="text/javascript" src="/static/admin/js/jquery.init.js"></script>
-<script type="text/javascript" src="/static/admin/js/core.js"></script>
-<script type="text/javascript" src="/static/admin/js/admin/RelatedObjectLookups.js"></script>
-<script type="text/javascript" src="/static/admin/js/actions.js"></script>
-<script type="text/javascript" src="/static/admin/js/calendar.js"></script>
-<script type="text/javascript" src="/static/admin/js/urlify.js"></script>
-<script type="text/javascript" src="/static/admin/js/admin/DateTimeShortcuts.js"></script>
-<script type="text/javascript" src="/static/admin/js/prepopulate.js"></script>
-<script type="text/javascript" src="/static/admin/js/vendor/xregexp/xregexp.js"></script>
-
-<link rel="stylesheet" type="text/css" href="/static/admin/css/responsive.css">
-
-{{ form.media }}
 
 <!--
 <link href='https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800' rel='stylesheet' type='text/css'>
@@ -178,25 +147,24 @@ Document | Impact By Distinctive Themes
                             </section><!--//doc-section-->
                             
                             <!-- 입력 폼 및 버튼 -->
-                            <div id="user_input">
+                            {{ form.media }}
                                 <form methond="POST" id="post-form">
                                     {% csrf_token %}
-                                    <table class="table">
-                                        <tbody>
+                                    <div class="form-group row">
                                         {% for field in form.visible_fields %}
-                                            <tr>
-                                                <td scope='row'>{{field.label_tag}}</td>
-                                                <td>{{field}}</td>
-                                            </tr>
+                                            <label class="col-sm-3 col-form-label" for="{{field.name}}">{{field.label}}</label>
+                                            <div class="col-sm-5">
+                                                {{field}}
+                                            </div>
+                                            <div class="col-sm-4"></div>
                                         {% endfor %}
-                                        </tbody>    
-                                    </table>
+                                    </div>
                                     <div id="results"></div> <!-- 에러가 발생한 경우 에러 내용을 출력할 부분 -->
                                     <button id="submit" type="submit" form="post-form" class="btn btn-warning">Ajax 요청</button>
                                     <button id="first_start" type="button" class="btn btn-primary">스트림 시작</button>
                                     <button id="first_stop" type="button" class="btn btn-danger">스트림 중지</button>
                                 </form>
-                            </div>
+                            
 
                             <div class="gap"></div>
 
