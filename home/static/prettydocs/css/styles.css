@@ -232,6 +232,10 @@ input[type="button"],
 textarea,
 select {
   appearance: none;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  padding: 5px 6px;
+  margin-top: 0;
   /* for mobile safari */
   -webkit-appearance: none;
 }

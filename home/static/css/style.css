@@ -2,6 +2,46 @@
 
 @import url(http://fonts.googleapis.com/css?family=Lato:400,700,300);
 
+/* Admin Form 관련 CSS 시작 -- */
+/* MODULES */
+.module {
+    border: none;
+    margin-bottom: 30px;
+    background: #fff;
+    z-index: 5;
+}
+.module p, .module ul, .module h3, .module h4, .module dl, .module pre {
+    padding-left: 10px;
+    padding-right: 10px;
+}
+.module blockquote {
+    margin-left: 12px;
+}
+.module h3 {
+    margin-top: .6em;
+}
+.module h2, .inline-group h2 {
+    margin: 0;
+    padding: 8px;
+    font-weight: 400;
+    font-size: 13px;
+    text-align: left;
+    background: #79aec8;
+    color: #fff;
+}
+.module caption,
+.inline-group h2 {
+    font-size: 12px;
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+    padding: 8px;
+    caption-side: unset;
+}
+.module table {
+    border-collapse: collapse;
+}
+/* Admin Form 관련 CSS 끝 -- */
+
 .clearfix {
     zoom: 1;
 }

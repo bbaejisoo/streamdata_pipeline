@@ -8,18 +8,19 @@
     <meta name="author" content="">
     <title>{% block title %}{% endblock title %}</title>
     
-    <!-- FontAwesome JS -->
-    <script defer src="https://use.fontawesome.com/releases/v5.7.2/js/all.js" integrity="sha384-0pzryjIRos8mFBWMzSSZApWtPl/5++eIfzYmTgBBmXYdhvxPc+XcFEk+zJwDgWbP" crossorigin="anonymous"></script>
+    {% block css %}
+    {% endblock css %}
 
     <link rel="stylesheet" href="{% static 'prettydocs/plugins/bootstrap/css/bootstrap.min.css' %}"> 
     <link href="{% static 'css/font-awesome.min.css' %}" rel="stylesheet">
+
+    <!-- FontAwesome JS -->
+    <script defer src="https://use.fontawesome.com/releases/v5.7.2/js/all.js" integrity="sha384-0pzryjIRos8mFBWMzSSZApWtPl/5++eIfzYmTgBBmXYdhvxPc+XcFEk+zJwDgWbP" crossorigin="anonymous"></script>
     <link href="{% static 'css/pe-icons.css' %}" rel="stylesheet">
     <link href="{% static 'css/prettyPhoto.css' %}" rel="stylesheet">
     <link href="{% static 'css/animate.css' %}" rel="stylesheet">
     <link href="{% static 'css/style.css' %}" rel="stylesheet">
     <script src="{% static 'js/jquery.js' %}"></script>
-    {% block css %}
-    {% endblock css %}
 
     <!--[if lt IE 9]>
     <script src="{% static 'js/html5shiv.js' %}"></script>
